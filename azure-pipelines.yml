@@ -21,36 +21,6 @@ stages:
     - script: mvn clean install
       displayName: 'Build Application'
 
-- stage: ContinuousDeployment
-  jobs:
-  - job: Deploy
-    steps:
-    - task: TomcatDeploy@0
-      inputs:
-        tomcatServiceEndpoint: '54127ebf-edfa-4301-80df-8e61074a6fdd'
-        warFile: '**/*.war'
-        contextPath: 'testapp2'
-        tomcatUrl: 'http://localhost:8888'
 
-- stage: ContinuousTesting
-  jobs:
-  - job: Testing
-    steps:
-    - checkout: self
-    - script: |
-        git clone https://github.com/karpanitava/tetsingjava.git
-      displayName: 'Clone Test Repository'
-    - script: java -jar C:/ProgramData/Jenkins/.jenkins/workspace/projectpipe/target/mywebapp-1.0-SNAPSHOT.war
-      displayName: 'Run Tests'
 
-- stage: ContinuousDelivery
-  jobs:
-  - job: DeployProd
-    steps:
-    - task: TomcatDeploy@0
-      inputs:
-        tomcatServiceEndpoint: '172c0881-f5e0-480c-a72a-04120e7bd981'
-        warFile: '**/*.war'
-        contextPath: 'prodapp2'
-        tomcatUrl: 'http://localhost:8889'
-        onFailure: false
+
