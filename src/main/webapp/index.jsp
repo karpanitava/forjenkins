@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>My Java Web App</title>
+    <title>cicdclouds</title>
 </head>
 <body>
     <h1>Welcome</h1>  
