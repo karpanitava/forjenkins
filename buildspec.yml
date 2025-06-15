@@ -4,6 +4,16 @@ phases:
   install:
     runtime-versions:
       java: corretto21
+    commands:
+      # --- ADD THESE COMMANDS TO INSTALL MAVEN ---
+      - echo "Installing Maven..."
+      - wget https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz -P /tmp
+      - sudo tar xf /tmp/apache-maven-3.9.6-bin.tar.gz -C /opt
+      - sudo ln -s /opt/apache-maven-3.9.6 /opt/maven
+      - export PATH=/opt/maven/bin:$PATH
+      - echo "Maven installed. Verifying version..."
+      - mvn -version # Verify Maven is now found and working
+      # --- END OF MAVEN INSTALLATION ---
   build:
     commands:
       - java -version
@@ -11,4 +21,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'target/mywebapp
+  base-directory: 'target/mywebapp'
