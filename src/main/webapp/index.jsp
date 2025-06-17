@@ -89,8 +89,8 @@
     </style>
 </head>
 <body>
-    <h1>Welcome</h1> 
-    <h2>www.cicdclouds.com</h2>
+    <h1>Welcome to cicdclouds.com</h1> 
+    <h2>Cloud Architect & DevOps Engineer</h2>
     <form action="greet" method="post">
         <!-- Label and input for email address with colorful styling -->
         <label for="email">Enter your email:</label><br>
