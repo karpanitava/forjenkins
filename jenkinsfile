@@ -14,7 +14,7 @@ pipeline {
         string(name: 'DEV_CONTEXT_PATH', defaultValue: 'pipetest', description: 'Context path for Dev deployment')
         string(name: 'PROD_CONTEXT_PATH', defaultValue: 'pipeprod', description: 'Context path for Prod deployment')
         // This parameter definition is syntactically correct and properly quotes the path.
-        string(name: 'TEST_WAR_PATH', defaultValue: 'C:/ProgramData/Jenkins/.jenkins/workspace/125/test.jar', description: 'Path to the test WAR file')
+        string(name: 'TEST_WAR_PATH', defaultValue: 'C:/ProgramData/Jenkins/.jenkins/workspace/126/test.jar', description: 'Path to the test WAR file')
     }
 
     stages {
